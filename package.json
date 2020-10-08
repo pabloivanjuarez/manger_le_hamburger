@@ -1,0 +1,25 @@
+{
+  "name": "manger_le_hamburger",
+  "version": "1.0.0",
+  "description": "A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabloivanjuarez/manger_le_hamburger.git"
+  },
+  "author": "Pablito",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  },
+  "bugs": {
+    "url": "https://github.com/pabloivanjuarez/manger_le_hamburger/issues"
+  },
+  "homepage": "https://github.com/pabloivanjuarez/manger_le_hamburger#readme"
+}
