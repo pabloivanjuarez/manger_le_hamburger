@@ -24,6 +24,6 @@ app.use(routes);
 
 // sever start
 app.listen(PORT, function (){
-  //  server log, to show when successful start
+  //  server log, to show a successful start
   console.log('server listening on:' + PORT);
 })
