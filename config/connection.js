@@ -8,3 +8,15 @@ let connection = mysql.createConnection({
   password: 'leboss321',
   database: 'burger_db'
 });
+
+// make connection
+connection.connect(function(err){
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+  return;  
+  }
+  console.log('connected as id ' + connection.threadID);
+});
+
+// export connection 
+module.exports = connection;
