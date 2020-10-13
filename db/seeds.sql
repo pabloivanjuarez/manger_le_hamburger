@@ -1,5 +1,4 @@
-USE DATABASE burger_db;
+USE burger_db;
 
-INSERT INTO plate ('Pulled Pork Western');
-INSERT INTO plate ('Breaky Burger');
-INSERT INTO plate ('Originial Whopper');
+INSERT INTO plate (burger_name) VALUES ('Pulled Pork Western'),
+('Breaky Burger', 'Originial Whopper');
