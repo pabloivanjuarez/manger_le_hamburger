@@ -31,11 +31,12 @@ function objToSql(ob) {
 }
 
 // object for all SQL statement functions
-const orm = {
+var orm = {
   all: function (table, cb) {
     var queryString = 'SELECT * FROM ' + table + ';';
     console.log(queryString);
     connection.query(queryString, function (err, result){
+      console.table(result);     
       if (err) { 
         throw err;
       }
