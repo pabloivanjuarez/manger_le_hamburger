@@ -1,5 +1,5 @@
 // inport the orm, create functions for db interaction
-var orm = require("../config/orm");
+var orm = require('../config/orm.js');
 
 const burger = {
   all: function (cb) {
@@ -8,7 +8,7 @@ const burger = {
     });
   },
   create: function (cols, vals, cb) {
-    orm.create('plate', objColVals, condition, function (res){
+    orm.create('plate', cols, vals, function (res){
       cb(res);
     });
   },
