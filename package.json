@@ -19,6 +19,9 @@
     "express-handlebars": "^3.0.0",
     "mysql": "^2.16.0"
   },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
+  },
   "bugs": {
     "url": "https://github.com/pabloivanjuarez/manger_le_hamburger/issues"
   },
