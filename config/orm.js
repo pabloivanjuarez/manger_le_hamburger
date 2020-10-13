@@ -1,11 +1,11 @@
 // import MySQL connection
-const connection = require('../config/connection');
+const connection = require('../config/connection.js');
 
 // helper function for MySQL
 function printQuestionMarks(num) {
   let arr = [];
 
-  for (let i = 0; i <num; i++) {
+  for (let i = 0; i < num; i++) {
 arr.push('?');    
   }
   return arr.toString();
@@ -19,9 +19,10 @@ function objToSql(ob) {
   for (var key in object) {
     var value = ob[key];
     // vheck to skip hidden properties
-    if (object.hasOwnProperty(ob, key)) {
+    if (Object.hasOwnProperty.call(ob, key)) {
       // if string w/ spaces, add quotations
      if (typeof value === 'string' && value.indexOf(" ") >= 0) {
+       value = "'" + value + "'";
     }
     arr.push(key + "=" + value);
     }
@@ -31,25 +32,33 @@ function objToSql(ob) {
 
 // object for all SQL statement functions
 const orm = {
-  all: function (tableInput, cb) {
-    var queryString = 'INSERT INTO ' + table;
-    
-    queryString += ' (';
-    queryString += close.toString();
-    queryString += ') ';
-    queryString += 'VALUES (';
-    queryString += printQuestionMarks(vals.length);
-    queryString += ') ';
-
-    console.log(queryString);
-
-    connection.query(queryString, vals, function(err, res){
-      if (err) {
+  all: function (plate, cb) {
+    var queryString = 'SELECT * FROM ' + plate + ';';
+    connection.query(queryString, function (err, result){
+      if (err) { 
         throw err;
       }
-      cb(res);
+       cb(result);
     });
   },
+    create: function(table, cols, cb) {
+      var queryString = 'INSERT INTO '+ table;
+      queryString += ' (';
+      queryString += cols.toString();
+      queryString += ') ';
+      queryString += 'VALUES (';
+      queryString += printQuestionMarks(vals.length);
+      queryString += ') ';
+      
+      console.log(queryString);
+      
+      connection.query(queryString, vals, function(err, res){
+        if (err) {
+          throw err;
+        }
+        cb(res);
+      });
+    },
 
   // an example of objColVals would be {name: killer burger, devoured: true}
   update: function(table, objColVals, condidtion, cb) {
