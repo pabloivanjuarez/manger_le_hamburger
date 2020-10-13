@@ -32,8 +32,8 @@ function objToSql(ob) {
 
 // object for all SQL statement functions
 const orm = {
-  all: function (plate, cb) {
-    var queryString = 'SELECT * FROM ' + plate + ';';
+  all: function (table, cb) {
+    var queryString = 'SELECT * FROM ' + table + ';';
     connection.query(queryString, function (err, result){
       if (err) { 
         throw err;
