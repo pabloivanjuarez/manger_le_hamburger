@@ -1,6 +1,6 @@
 
   # Manger Le Hamburger!
-  ![License Badge](https://img.shields.io/badge/License-MIT-blue) ![Code Badge](https://img.shields.io/badge/JavaScript-100%25-green)
+  ![License Badge](https://img.shields.io/badge/License-MIT-blue) ![JS Badge](https://img.shields.io/badge/JavaScript-77.7%25-yellow) ![Handlebars Badge](https://img.shields.io/badge/Handlebars-23.3%25-orange)
   
   ## Description
 
