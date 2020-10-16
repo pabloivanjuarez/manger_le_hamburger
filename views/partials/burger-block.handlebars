@@ -2,8 +2,10 @@
   {{name}}
 
   <button class="change_eat_status" data-id="{{id}}" data-newEat="{{devoured}}">
-    {{#if devoured}}EAT TIME!{{else}EAT MORE BURGERS!{{/if}}
+    {{#if devoured}}{{burger_name}}EAT TIME!
+    {{else}}EAT MORE BURGERS!
+    {{/if}}
   </button>
 
-  <button class="rm_burger" data-id="{{this.id}}">RM-da-Burger!</button>
+  <button class="rm_burger" data-id="{{this.id}}"><i class="far fa-window-close"></button>
 </li>
